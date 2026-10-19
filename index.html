@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+content="width=device-width,
+initial-scale=1.0">
+<title>Our Memories </title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #faf8f5;
+        font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+        color: #3d3a36;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        text-align: center;
+        padding: 50px 20px 30px 20px;
+    }
+
+    header h1 {
+        font-size: 2.3rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        color: #2b2927;
+        margin-bottom: 10px;
+    }
+
+    header p {
+        font-size: 1rem;
+        color: #8c857b;
+    }
+
+    main {
+        max-width: 1000px;
+        margin: auto;
+        padding: 30px 18px;
+    }
+
+    .judul {
+        text-align: center;
+        font-weight: 600;
+        margin: 30px 0 20px 0;
+        font-size: 1.5rem;
+        color: #4a4743;
+    }
+
+    .galeri {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0px, 1fr));
+        gap: 30px;
+        padding: 0 24px 60px 24px;
+        max-width: 950px;
+        margin: 0 auto;
+    }
+
+    .kartu {
+        background-color: #ffffff;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 24px;
+        box-shadow: 0 4px 20px rgba(165, 155, 140, 0.08),
+                    0 10px 40px rgba(165, 155, 140, 0.04);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.03, 1),
+                    box-shadow 0.4s cubic-bezier(0.16, 1, 0.03, 1);
+        box-sizing: border-box;
+    }
+
+    .kartu:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 38px rgba(140, 130, 115, 0.15),
+                    0 8px 16px rgba(140, 130, 115, 0.05);
+    }
+
+    .kartu img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .kartu:hover img {
+        transform: scale(1.03);
+    }
+
+    .kartu p {
+        text-align: center;
+        padding: 20px;
+        margin: 0;
+        font-weight: 500;
+        font-size: 1rem;
+        letter-spacing: 0.03px;
+        color: #524f4a;
+        background-color: #ffffff;
+        position: relative;
+        z-index: 2;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #f8e1e5;
+    }
+
+    /*Tampilan di HP */
+    @media (max-width: 650px) {
+        header h1 {
+            font-size: 29px;
+        }
+
+        .galeri {
+            grid-template-columns: 1fr;
+                gap: 20px;
+        }
+
+        .kartu img {
+            height: 160px;
+        }
+     }
+
+     /* Foto besar ketika diklik */
+     .modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: #000000e8;
+        z-index: 10;
+        justify-content: center;
+        padding: 20px;
+     }
+
+     .modal img {
+        max-width: 95%;
+        max-height: 85vh;
+        object-fit: contain;
+     }
+
+     .tutup {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        color: white;
+        font-size: 38px;
+        cursor: pointer;
+     }
+        .galery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0px, 1fr));
+            gap: 20px;
+            padding: 20px
+        }
+
+        .kartu {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 12px;
+            box-sizing: border-box;
+        }
+
+        .kartu img {
+            width: 100%;   /* Lebar foto mengikuti kotak kartu */
+            height: auto;  /* Tinggi foto otomatis menyesuaikan proporsi asli foto */
+            object-fit: cover;
+            display: block; /* Mengubah tanda ; menjadi : block; */
+        }
+
+        .kartu p {
+            text-align: center;
+            padding: 12px;
+        }
+ 
+        @media (max-width: 600px) {
+            .galeri {
+                grid-template-columns: 1 fr;
+            }
+        } 
+
+        </style>
+        </head>
+
+        <body>
+
+        <header>
+            <h1>Foto Kita Niehhh</h1>
+            <p>Kumpulan cerita dan kenangan indah kita.</p>
+        </header>
+
+        <main>
+            <h2 class="judul">Foto-Foto Kita</h2>
+
+            <section class="galery">
+                <div class="kartu">
+                    <img src="images/foto1.jpg.jpeg" alt="Hari Pertama Kita Jalan">
+                    <p>Hari Pertama Fotbar</p>
+                    </div>
+
+                    <div class="kartu">
+                        <img src="images/foto2.jpg.jpeg" alt="Duo Gitaris Niehhh">
+                        <p>Duo Gitaris Niehhh</p>
+                </div>
+            </section>
+
+            <section class="galeri">
+                    <div class="kartu">
+                        <img src="images/foto3.jpg.jpeg" alt="Anak Band Niehhh...">
+                        <p>Anak Band Niehhh..."></Niehhh></p>
+
+                </div>
+            </section>
+
+            <selection class="galeri">
+                    <div class="kartu">
+                        <img src="images/foto4.jpg.jpeg"alt="Anak Bass Niehhh">
+                        <p>Anak Bass Niehhh</p>
+
+                </div>
+            </selection>
+
+            <selection class="galeri">
+                    <div class="kartu">
+                        <img src="images/foto5.jpg.jpeg" alt="Foto Gw Niehhh wkwk">
+                        <p>Foto Gw Niehhh wkwk</p>
+           
+                </div> 
+            </selection>
+
+                <selection class="galeri">
+                    <div class="kartu">
+                        <img src="images/foto6.jpg.jpeg" alt="Putri Srimuliani and Daniel Alexander">
+                        <p>Putri Srimuliani and Daniel Alexander</p>
+                    </div>
+                </selection>
+            
+
+                <div style="text-align: center; margin: 40px auto; max-width: 540px; padding: 15px; background: #f19292; border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); clear: both;">
+                    <video width="100%" style="border-radius: 10px; display: block;" controls>
+                        <source src="cinematic.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+            <section class="pesan">
+                             <h2>Gokill bangett aslii</h2>
+                 <p>
+                    😗Terima kasih udah menjadi bagian dari cerita indah ini😗
+                    😗Semoga masih banyak kesenangan yang bisa kita buat bersama😗
+
+                    ini musik ada gw taruh dibawah sekedar nambah nambah biar agak hidup dikit suasananya🙄🙄🙄
+                 </p>
+            </section>
+
+
+            <div style="text-align: center; margin: 30px auto; max-width: 540px; padding: 25px; background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); clear: both;">
+                <h3 style="margin-bottom: 15px; font-size: 18px; font-weight: bold; color: #333;">🎵 Putar Musik Latar</h3>
+
+                <audio controls style="width: 100%; margin-bottom: 20px;">
+                    <source src="sheilaon7.mp3.mpeg" type="audio/mpeg">
+                </audio>
+
+                <h4 style="font-size: 15px; font-weight: bold; margin-bottom: 12px; color: #555; text-transform: uppercase; letter-spacing: 1px;">Lyrics</h4>
+                <div style="font-size: 15px; line-height: 2; color: #666; max-height: 180px; overflow-y: auto; padding: 10px; border-top: 1px solid #f0f0f0;">
+                    <p style="margin: 5px 0;">...🎵Lirik Lagu Sheila On 7🎵...</p>
+                    <p style="margin: 5px 0;">...Terlalu Bodoh Untuk Dirikuuu...</p>
+                    <p style="margin: 5px 0;">...Menahan Berat Jutaan Rinduuu...</p>
+                    <p style="margin: 5px 0;">...Apalagi Menahan Egokuuu...</p>
+                    <p style="margin: 5px 0;">Maafkanlah...Sikapkuu...</p>
+                    <p style="margin: 5px 0;">Lupakanlahh..salahkuuu...</p>
+                    <p style="margin: 5px 0;">Luapkann..Kepadakuuuu..</p>
+                    <p style="margin: 5px 0;">🎵Woouooooo...🎵</p>
+                </div>
+            </div>
+            <!-- Wadah Utama Mesin Arcade -->
+        <div style="text-align: center; margin: 40px auto; max-width: 480px; clear: both; font-family: 'Courier New', Courier, monospace; background: linear-gradient(135deg, #2c1a4d, #140b27); border: 8px solid #ff007f; border-radius: 24px 24px 12px 12px; box-shadow: 0 0 30px rgba(255, 0, 127, 0.4), 0 15px 35px rgba(0,0,0,0.5); overflow: hidden; position: relative;">
+            
+            <!-- Papan Nama Atas (Marquee) -->
+            <div style="background: #111; padding: 12px; border-bottom: 5px solid #00ffff; box-shadow: inset 0 0 15px rgba(0, 255, 255, 0.6); text-align: center;">
+                <h3 style="margin: 0; font-size: 20px; font-weight: bold; color: #00ffff; text-shadow: 0 0 8px #00ffff, 0 0 15px #00ffff; letter-spacing: 2px; text-transform: uppercase;">🕹️ POKEMON ARCADE 🐱🌈</h3>
+            </div>
+
+            <!-- Layar Monitor Tempat Game (Versi Lokal Mandiri) -->
+            <div style="background: #222; padding: 12px 10px; border: 15px solid #1a1a1a; border-radius: 4px; box-shadow: inset 0 0 20px rgba(0,0,0,1); display: flex; flex-direction: column; align-items: center; box-sizing: border-box; position: relative;">
+                
+                <!-- Kanvas Layar Game Dino -->
+                <canvas id="dinoCanvas" width="390" height="140" style="background: #f7f7f7; border-radius: 6px; display: block; cursor: pointer;"></canvas>
+                
+                <!-- Teks Start/Game Over Melayang -->
+                <div id="dinoStatus" style="position: absolute; color: #333; font-family: monospace; font-size: 14px; font-weight: bold; top: 50%; transform: translateY(-50%); pointer-events: none; text-align: center; width: 100%;">
+                    KLIK DI SINI & TEKAN SPASI<br><span style="font-size: 11px; color: #777;">UNTUK MEMULAI</span>
+                </div>
+
+                
+                    
+            </div>
+            <!-- Layar Monitor Tempat Game (Pokemon Mandiri) -->
+            <div style="background: #222; padding: 12px 10px; border: 15px solid #1a1a1a; border-radius: 4px; box-shadow: inset 0 0 20px rgba(0,0,0,1); display: flex; flex-direction: column; align-items: center; box-sizing: border-box; position: relative;">
+                
+                <!-- Kanvas Layar Game -->
+                <canvas id="dinoCanvas" width="390" height="140" style="background: #f7f7f7; border-radius: 6px; display: block; cursor: pointer;"></canvas>
+                
+                <!-- Teks Start/Game Over -->
+                <div id="dinoStatus" style="position: absolute; color: #333; font-family: monospace; font-size: 14px; font-weight: bold; top: 50%; transform: translateY(-50%); pointer-events: none; text-align: center; width: 100%;">
+                    KLIK DI SINI & TEKAN SPASI<br><span style="font-size: 11px; color: #777;">UNTUK MEMULAI PETUALANGAN</span>
+                </div>
+
+                <!-- SCRIPT PROGRAM LOGIKA GAME PIKACHU -->
+                <script>
+                    const canvas = document.getElementById("dinoCanvas");
+                    const ctx = canvas.getContext("2d");
+                    const statusTxt = document.getElementById("dinoStatus");
+
+                    let gameStart = false; let gameOver = false; let score = 0;
+                    let spawnTimer = 0; let speed = 4; let obstacles = [];
+
+                    let pikachu = { x: 40, y: 105, width: 26, height: 30, vy: 0, gravity: 0.6, jumpForce: -10.5, isJumping: false };
+
+                    function drawPikachu(x, y) {
+                        ctx.fillStyle = "#F3E633"; ctx.fillRect(x + 4, y + 6, 16, 20); ctx.fillRect(x + 8, y, 10, 8);
+                        ctx.fillStyle = "#F3E633"; ctx.fillRect(x + 6, y - 6, 4, 6); ctx.fillRect(x + 14, y - 6, 4, 6);
+                        ctx.fillStyle = "#000000"; ctx.fillRect(x + 6, y - 8, 4, 3); ctx.fillRect(x + 14, y - 8, 4, 3);
+                        ctx.fillStyle = "#000000"; ctx.fillRect(x + 8, y + 2, 2, 2); ctx.fillRect(x + 14, y + 2, 2, 2);
+                        ctx.fillStyle = "#E63946"; ctx.fillRect(x + 4, y + 5, 3, 3); ctx.fillRect(x + 17, y + 5, 3, 3);
+                        ctx.fillStyle = "#F3E633"; ctx.fillRect(x - 4, y + 6, 4, 4); ctx.fillRect(x - 2, y + 2, 4, 4); ctx.fillRect(x + 1, y - 2, 4, 5);
+                        ctx.fillStyle = "#A66226"; ctx.fillRect(x - 4, y + 9, 3, 2);
+                        ctx.fillStyle = "#000000"; ctx.fillRect(x + 6, y + 26, 4, 4); ctx.fillRect(x + 14, y + 26, 4, 4);
+                    }
+
+                    function spawnObstacle() {
+                        let type = Math.random() > 0.5 ? "diglett" : "charmander";
+                        if (type === "diglett") {
+                            obstacles.push({ x: canvas.width, y: 115, width: 20, height: 20, type: "diglett" });
+                        } else {
+                            obstacles.push({ x: canvas.width, y: 105, width: 22, height: 30, type: "charmander" });
+                        }
+                    }
+
+                    function drawObstacle(obs) {
+                        if (obs.type === "diglett") {
+                            ctx.fillStyle = "#9C6644"; ctx.fillRect(obs.x + 2, obs.y + 2, 16, 16);
+                            ctx.fillStyle = "#7F5539"; ctx.fillRect(obs.x + 4, obs.y, 12, 4);
+                            ctx.fillStyle = "#000000"; ctx.fillRect(obs.x + 6, obs.y + 4, 2, 4); ctx.fillRect(obs.x + 12, obs.y + 4, 2, 4);
+                            ctx.fillStyle = "#E29578"; ctx.fillRect(obs.x + 8, obs.y + 7, 4, 3);
+                            ctx.fillStyle = "#777777"; ctx.fillRect(obs.x, obs.y + 17, 20, 3);
+                        } else {
+                            ctx.fillStyle = "#F77F00"; ctx.fillRect(obs.x + 4, obs.y + 6, 14, 20); ctx.fillRect(obs.x + 6, obs.y, 10, 8);
+                            ctx.fillStyle = "#FCBF49"; ctx.fillRect(obs.x + 8, obs.y + 10, 8, 12);
+                            ctx.fillStyle = "#000000"; ctx.fillRect(obs.x + 11, obs.y + 2, 2, 3);
+                            ctx.fillStyle = "#D62828"; ctx.fillRect(obs.x, obs.y + 16, 5, 5);
+                            ctx.fillStyle = "#FCBF49"; ctx.fillRect(obs.x + 1, obs.y + 15, 2, 3);
+                        }
+                    }
+
+                    function resetGame() {
+                        pikachu.y = 105; pikachu.vy = 0; pikachu.isJumping = false;
+                        obstacles = []; score = 0; speed = 4; gameOver = false; gameStart = true;
+                        statusTxt.style.display = "none"; animate();
+                    }
+
+                    window.addEventListener("keydown", function(e) {
+                        if (e.code === "Space" || e.code === "ArrowUp") {
+                            e.preventDefault();
+                            if (!gameStart || gameOver) { resetGame(); } 
+                            else if (!pikachu.isJumping) { pikachu.vy = pikachu.jumpForce; pikachu.isJumping = true; }
+                        }
+                    });
+
+                    canvas.addEventListener("click", function() { if (!gameStart || gameOver) resetGame(); });
+
+                    function animate() {
+                        if (gameOver) return;
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        ctx.strokeStyle = "#444"; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(0, canvas.height - 5); ctx.lineTo(canvas.width, canvas.height - 5); ctx.stroke();
+                        pikachu.vy += pikachu.gravity; pikachu.y += pikachu.vy;
+                        if (pikachu.y >= 105) { pikachu.y = 105; pikachu.vy = 0; pikachu.isJumping = false; }
+                        drawPikachu(pikachu.x, pikachu.y);
+                        spawnTimer++;
+                        if (spawnTimer > Math.random() * (110 - 75) + 75) { spawnObstacle(); spawnTimer = 0; }
+                        for (let i = obstacles.length - 1; i >= 0; i--) {
+                            let obs = obstacles[i]; obs.x -= speed; drawObstacle(obs);
+                            if (pikachu.x < obs.x + obs.width && pikachu.x + pikachu.width > obs.x &&
+                                pikachu.y < obs.y + obs.height && pikachu.y + pikachu.height > obs.y) {
+                                gameOver = true;
+                                statusTxt.innerHTML = "GAME OVER<br><span style='font-size:11px;color:#777;'>TEKAN SPASI UNTUK RE-MATCH</span>";
+                                statusTxt.style.display = "block";
+                            }
+                            if (obs.x + obs.width < 0) { obstacles.splice(i, 1); score++; if(score % 5 === 0) speed += 0.5; }
+                        }
+                        ctx.fillStyle = "#222"; ctx.font = "bold 12px 'Courier New', monospace"; ctx.fillText("SCORE: " + score, canvas.width - 90, 20);
+                        if (!gameOver) requestAnimationFrame(animate);
+                    }
+                    drawPikachu(pikachu.x, pikachu.y);
+                    ctx.strokeStyle = "#444"; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(0, canvas.height - 5); ctx.lineTo(canvas.width, canvas.height - 5); ctx.stroke();
+                </script>
+            </div>
+            <!-- Papan Tombol Kontrol Bawah (Sudah Diperbaiki Jadi Mendatar) -->
+            <div style="background: #1b1133; padding: 15px 20px; border-top: 5px solid #ff007f; display: flex !important; flex-direction: row !important; justify-content: space-between !important; align-items: center !important; box-sizing: border-box;">
+                
+                <!-- Joystick -->
+                <div style="display: flex; flex-direction: column; align-items: center; width: 40px;">
+                    <div style="width: 24px; height: 24px; background: #ff0000; border-radius: 50%; box-shadow: 0 0 10px #ff0000, inset -3px -3px 6px rgba(0,0,0,0.4);"></div>
+                    <div style="width: 6px; height: 20px; background: #888; margin-top: -2px; border-radius: 2px;"></div>
+                    <div style="width: 30px; height: 8px; background: #222; border-radius: 50%;"></div>
+                </div>
+
+                <!-- Petunjuk Jalan -->
+                <div style="color: #fff; font-size: 11px; text-align: center; font-weight: bold; letter-spacing: 0.5px; opacity: 0.8; line-height: 1.4; flex-grow: 1;">
+                    PRESS <span style="background: #00ffff; color: #000; padding: 2px 6px; border-radius: 4px; box-shadow: 0 0 5px #00ffff;">SPACEBAR</span><br>TO JUMP / START
+                </div>
+
+                <!-- Tombol Aksi -->
+                <div style="display: flex !important; flex-direction: row !important; gap: 8px; width: 60px; justify-content: flex-end;">
+                    <div style="width: 22px; height: 22px; background: #00ff00; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 8px #00ff00, inset -2px -2px 4px rgba(0,0,0,0.3);"></div>
+                    <div style="width: 22px; height: 22px; background: #ffcc00; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 8px #ffcc00, inset -2px -2px 4px rgba(0,0,0,0.3);"></div>
+                </div>
+            </div>
+        </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- BAGIAN CHATBOT AI AESTHETIC -->
+    <div style="text-align: left; margin: 40px auto; max-width: 540px; background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); clear: both; overflow: hidden; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        
+        <!-- Header Chatbot -->
+        <div style="background: linear-gradient(135deg, #2c1a4d, #140b27); padding: 15px 20px; display: flex; align-items: center; border-bottom: 3px solid #ff007f;">
+            <div style="font-size: 24px; margin-right: 12px;">🤖</div>
+            <div>
+                <h3 style="margin: 0; font-size: 16px; font-weight: bold; color: #ffffff;">Asisten AI Kenangan</h3>
+                <span style="font-size: 11px; color: #00ffff; font-weight: bold;">● Online & Siap Menemani</span>
+            </div>
+        </div>
+
+        <!-- Area Pesan Obrolan (Bisa di-scroll) -->
+        <div id="chatBox" style="height: 250px; overflow-y: auto; padding: 20px; background: #fdfbfb; display: flex; flex-direction: column; gap: 12px; box-sizing: border-box;">
+            <!-- Pesan Sambutan Awal dari AI -->
+            <div style="display: flex; gap: 10px; align-items: flex-end; max-width: 85%;">
+                <div style="background: #e9ecef; color: #333; padding: 10px 14px; border-radius: 14px 14px 14px 0px; font-size: 14px; line-height: 1.4; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                    Halo Daniel! 👋 Aku AI penjaga website kenangan ini. Ada yang bisa kubantu atau mau ngobrol santai aja? 😊
+                </div>
+            </div>
+        </div>
+
+        <!-- Area Input Kotak Ketik Pesan -->
+        <div style="padding: 15px; background: #ffffff; border-top: 1px solid #eee; display: flex; gap: 10px; box-sizing: border-box;">
+            <input type="text" id="chatInput" placeholder="Ketik pesan di sini..." style="flex-grow: 1; padding: 12px 16px; border: 1px solid #ddd; border-radius: 25px; font-size: 14px; outline: none; transition: 0.2s; box-sizing: border-box;">
+            <button onclick="kirimPesan()" style="background: #ff007f; color: white; border: none; padding: 0 20px; border-radius: 25px; font-size: 14px; font-weight: bold; cursor: pointer; transition: 0.2s; box-shadow: 0 4px 10px rgba(255,0,127,0.2);">
+                Kirim
+            </button>
+        </div>
+
+        <!-- PROGRAM LOGIKA OTOMATIS CHATBOT -->
+        <script>
+            // Fungsi merespons otomatis secara lokal
+            function dapatkanResponAI(pesanUser) {
+                const teks = pesanUser.toLowerCase();
+                
+                if (teks.includes("halo") || teks.includes("hai") || teks.includes("p")) {
+                    return "Halo juga! Senang banget bisa nemenin kamu di halaman penuh cerita indah ini. ✨";
+                }
+                if (teks.includes("siapa") && teks.includes("daniel")) {
+                    return "Daniel Alexander itu orang keren yang bikin website aesthetic ini! Gokil banget kan karyanya? 😎🔥";
+                }
+                if (teks.includes("putri")) {
+                    return "Putri Srimuliani adalah bagian terpenting dari cerita indah di website ini! Langgeng dan bahagia selalu ya buat kalian berdua! ✨❤️";
+                }
+                if (teks.includes("kabar") || teks.includes("apa kabar")) {
+                    return "Aku sebagai AI selalu luar biasa dan bersemangat menjaga web ini! Kamu sendiri gimana kabarnya hari ini?";
+                }
+                if (teks.includes("gokil")) {
+                    return "Gokill bangett asliii! Gak ada obat pokoknya web ini mah! 🚀💥";
+                }
+                if (teks.includes("terima kasih") || teks.includes("makasih")) {
+                    return "Sama-sama! Selalu menyenangkan bisa membantu merapikan halaman memori berharga ini. 🙏✨";
+                }
+                
+                // Respon default jika mengetik hal lain
+                return "Wah ceritamu menarik sekali! Terus buat momen indah bareng orang tersayang ya, biar memori di web ini makin banyak! 🥰🍀";
+            }
+
+            function kirimPesan() {
+                const input = document.getElementById("chatInput");
+                const chatBox = document.getElementById("chatBox");
+                const pesan = input.value.trim();
+
+                if (pesan === "") return;
+
+                // 1. Gambar Gelembung Obrolan User (Kanan - Warna Pink)
+                const userDiv = document.createElement("div");
+                userDiv.style.cssText = "display: flex; gap: 10px; align-items: flex-end; max-width: 85%; align-self: flex-end;";
+                userDiv.innerHTML = `
+                    <div style="background: #ff007f; color: white; padding: 10px 14px; border-radius: 14px 14px 0px 14px; font-size: 14px; line-height: 1.4; box-shadow: 0 4px 10px rgba(255,0,127,0.15);">
+                        ${pesan}
+                    </div>
+                `;
+                chatBox.appendChild(userDiv);
+                input.value = ""; // Kosongkan kolom ketik
+                chatBox.scrollTop = chatBox.scrollHeight; // Auto scroll ke bawah
+
+                // 2. Beri jeda sedikit seolah-olah AI sedang mengetik, lalu munculkan balasan
+                setTimeout(() => {
+                    const responAI = dapatkanResponAI(pesan);
+                    const aiDiv = document.createElement("div");
+                    aiDiv.style.cssText = "display: flex; gap: 10px; align-items: flex-end; max-width: 85%;";
+                    aiDiv.innerHTML = `
+                        <div style="background: #e9ecef; color: #333; padding: 10px 14px; border-radius: 14px 14px 14px 0px; font-size: 14px; line-height: 1.4; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                            ${responAI}
+                        </div>
+                    `;
+                    chatBox.appendChild(aiDiv);
+                    chatBox.scrollTop = chatBox.scrollHeight; // Auto scroll ke bawah
+                }, 600);
+            }
+
+            // Fitur agar bisa kirim dengan menekan tombol Enter di keyboard
+            document.getElementById("chatInput").addEventListener("keypress", function(e) {
+                if (e.key === "Enter") {
+                    kirimPesan();
+                }
+            });
+        </script>
+    </div>
+        </main>
+        <footer>
+            Dibuat oleh Daniel Alexander.
+        </footer>
+
+        <div class="modal" id="modal">
+            <span class="tutup" id="tutup">&times;</span>
+            <img id="fotoBesar" src="" alt="Foto kenangan">
+        </div>
+
+        <script>
+            const modal = document.getElemenByld("modal");
+            const fotoBesar = document.getElementByld("fotoBesar");
+            const tombolTutup = document.getElementByld("tutup");
+
+            document.querySelectorAll(".kartu img").forEach(function(foto) {
+                foto.addEventListener("click", function() {
+                    modal.style.display = "flex";
+                    fotoBesar.src = foto.src;
+                });
+            });
+
+            tombolTutup.addEventListener("click", function() {
+                modal.style.display = "none";
+            });
+
+            modal.addEventListener("click", function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        </script>
+
+    </body>
+    </html
